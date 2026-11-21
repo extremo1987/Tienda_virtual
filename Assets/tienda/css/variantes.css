@@ -1,0 +1,39 @@
+/* Selector de variantes (color, talla, medidas...) en la ficha del producto */
+.mg-var { margin: 22px 0 6px; }
+.mg-var__grupo { margin-bottom: 18px; }
+.mg-var__titulo { font-size: 14px; color: #666; margin-bottom: 9px; }
+.mg-var__titulo b { color: #222; font-weight: 600; }
+.mg-var__opciones { display: flex; flex-wrap: wrap; gap: 9px; }
+
+.mg-var__op {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-width: 46px; min-height: 42px; padding: 0 16px;
+  border: 1.5px solid #d9d9d9; border-radius: 10px;
+  background: #fff; color: #333; font-size: 14px; line-height: 1;
+  cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s, transform .1s;
+}
+.mg-var__op:hover { border-color: #717fe0; }
+.mg-var__op:focus-visible { outline: 3px solid rgba(113, 127, 224, .45); outline-offset: 2px; }
+.mg-var__op:active { transform: scale(.97); }
+.mg-var__op.is-sel { border-color: #717fe0; background: #717fe0; color: #fff; box-shadow: 0 3px 10px rgba(113, 127, 224, .35); }
+.mg-var__op.is-no { color: #a5a5a5; background: #f6f6f6; border-style: dashed; text-decoration: line-through; }
+.mg-var__op.is-no.is-sel { color: #fff; background: #9aa3e8; border-style: solid; }
+.mg-var__dot { width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .28); flex: none; }
+.mg-var__op.is-sel .mg-var__dot { border-color: rgba(255, 255, 255, .85); }
+
+.mg-var__info { min-height: 22px; margin-top: 2px; font-size: 14px; color: #777; }
+.mg-var__info.es-ok { color: #2e8b57; }
+.mg-var__info.es-poco { color: #d9822b; font-weight: 600; }
+.mg-var__info.es-agotado { color: #c0392b; font-weight: 600; }
+.js-addcart-detail[disabled] { opacity: .4 !important; cursor: not-allowed !important; filter: grayscale(.6); }
+
+.mg-var__grupo--falta .mg-var__titulo { color: #c0392b; font-weight: 600; }
+.mg-var__grupo--falta .mg-var__opciones { animation: mgVarSacudir .45s; }
+@keyframes mgVarSacudir { 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
+
+@media (max-width: 575px) {
+  .mg-var__op { min-height: 44px; padding: 0 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mg-var__op, .mg-var__grupo--falta .mg-var__opciones { transition: none; animation: none; }
+}

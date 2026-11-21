@@ -1,0 +1,197 @@
+/* =====================================================================
+   Portada y tarjetas de producto — apariencia moderna (PC y celular)
+   Color de acento de la tienda: #717fe0
+   ===================================================================== */
+:root {
+  --mg-acento: #717fe0;
+  --mg-acento-oscuro: #5967c9;
+  --mg-tinta: #1d2033;
+  --mg-suave: #f4f5fa;
+  --mg-sombra: 0 2px 14px rgba(24, 28, 66, .07);
+  --mg-sombra-fuerte: 0 12px 30px rgba(24, 28, 66, .16);
+}
+
+/* ---------- Banner principal ---------- */
+.section-slide .item-slick1 {
+  position: relative;
+  height: clamp(440px, 72vh, 680px);
+}
+.section-slide .item-slick1::before {          /* velo para que el texto siempre se lea */
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(18, 21, 48, .58) 0%, rgba(18, 21, 48, .24) 36%, rgba(18, 21, 48, 0) 62%);
+}
+.section-slide .item-slick1 > .container { position: relative; z-index: 1; }
+.section-slide .layer-slick1 .cl2,
+.section-slide .layer-slick1 .cl2 * { color: #fff; }
+.section-slide .layer-slick1 .ltext-101 { letter-spacing: .4px; opacity: .95; }
+.section-slide .layer-slick1 .ltext-201 {
+  font-size: clamp(30px, 5.2vw, 58px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .55), 0 4px 22px rgba(0, 0, 0, .45);
+  max-width: 780px;
+}
+.section-slide .layer-slick1 a.bg1 {
+  border-radius: 999px;
+  padding: 0 34px;
+  box-shadow: 0 8px 22px rgba(113, 127, 224, .45);
+}
+.section-slide .layer-slick1 a.bg1:hover { background: var(--mg-acento-oscuro); }
+.wrap-slick1 .arrow-slick1 { background: rgba(255, 255, 255, .85); border-radius: 50%; width: 46px; height: 46px; line-height: 46px; text-align: center; }
+
+/* ---------- Menú superior: fondo blanco para que siempre se lea ---------- */
+.wrap-menu-desktop { background-color: #fff !important; box-shadow: 0 2px 14px rgba(24, 28, 66, .08); }
+.wrap-menu-desktop .main-menu > li > a { color: var(--mg-tinta); font-weight: 500; }
+.wrap-menu-desktop .main-menu > li.active-menu > a, .wrap-menu-desktop .main-menu > li:hover > a { color: var(--mg-acento-oscuro); }
+
+/* ---------- Banner: puntos de navegación (se ve que son varias imágenes) y flechas también en celular ---------- */
+.mg-banner-puntos { position: absolute; left: 0; right: 0; bottom: 18px; z-index: 5; display: flex; justify-content: center; gap: 9px; pointer-events: none; }
+.mg-banner-puntos button {
+  pointer-events: auto; width: 11px; height: 11px; padding: 0; border-radius: 999px; border: 0; cursor: pointer;
+  background: rgba(255, 255, 255, .55); box-shadow: 0 1px 4px rgba(0, 0, 0, .35); transition: width .25s, background .25s;
+}
+.mg-banner-puntos button.activo { width: 30px; background: #fff; }
+.wrap-slick1 .arrow-slick1 { z-index: 6; }
+@media (max-width: 767px) {
+  .wrap-slick1 .arrow-slick1 { display: block !important; width: 38px; height: 38px; line-height: 38px; font-size: 22px; opacity: .9; top: 46%; }
+  .mg-banner-puntos { bottom: 12px; }
+}
+
+/* ---------- Títulos de sección ---------- */
+.mg-seccion-titulo { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+.mg-seccion-titulo h3 { margin: 0; font-size: 28px; font-weight: 700; color: var(--mg-tinta); position: relative; padding-bottom: 12px; }
+.mg-seccion-titulo h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 56px; height: 4px; border-radius: 4px; background: var(--mg-acento); }
+.mg-seccion-titulo p { margin: 6px 0 0; color: #7a7f93; font-size: 15px; }
+.mg-seccion-titulo a.mg-ver-todo { color: var(--mg-acento-oscuro); font-weight: 600; font-size: 15px; white-space: nowrap; }
+.mg-seccion-titulo a.mg-ver-todo:hover { text-decoration: underline; }
+
+/* ---------- Categorías ---------- */
+.sec-banner { padding-top: 64px !important; padding-bottom: 28px !important; }
+.sec-banner .block1 {
+  border: 0; border-radius: 18px; overflow: hidden;
+  box-shadow: var(--mg-sombra);
+  transition: transform .25s, box-shadow .25s;
+}
+.sec-banner .block1:hover { transform: translateY(-4px); box-shadow: var(--mg-sombra-fuerte); }
+.sec-banner .block1 img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .6s; }
+.sec-banner .block1:hover img { transform: scale(1.07); }
+.sec-banner .block1-txt {
+  background: linear-gradient(to top, rgba(16, 19, 46, .78) 0%, rgba(16, 19, 46, .12) 58%, rgba(16, 19, 46, 0) 100%) !important;
+  padding: 26px 28px !important;
+  justify-content: flex-end;
+}
+.sec-banner .block1-txt:hover { background: linear-gradient(to top, rgba(88, 100, 200, .85) 0%, rgba(16, 19, 46, .25) 70%, rgba(16, 19, 46, 0) 100%) !important; }
+.sec-banner .block1-name { color: #fff !important; font-size: 24px; font-weight: 700; text-shadow: 0 2px 10px rgba(0, 0, 0, .3); }
+.sec-banner .block1-txt-child2 { border-bottom: 0 !important; transform: none !important; overflow: visible; padding-bottom: 0 !important; }
+.sec-banner .block1-link { transform: none !important; color: #fff !important; font-size: 14px; font-weight: 600; letter-spacing: .3px; opacity: .95; }
+.sec-banner .block1-link::after { content: " →"; }
+
+/* ---------- Tarjetas de producto (portada, tienda, categorías, búsqueda) ---------- */
+.block2 {
+  background: #fff; border-radius: 16px; overflow: hidden;
+  box-shadow: var(--mg-sombra);
+  transition: transform .22s, box-shadow .22s;
+  height: 100%;
+}
+.block2:hover { transform: translateY(-5px); box-shadow: var(--mg-sombra-fuerte); }
+.block2-pic { position: relative; aspect-ratio: 1 / 1; background: var(--mg-suave); overflow: hidden; }
+.block2-pic img { width: 100%; height: 100%; object-fit: cover; }
+.block2-pic .block2-btn { border-radius: 999px; border: 0; box-shadow: 0 6px 18px rgba(0, 0, 0, .18); }
+.block2-txt { padding: 14px 16px 16px !important; align-items: flex-start; }
+.block2-txt .block2-txt-child1 { flex: 1; min-width: 0; }
+.block2-txt a.js-name-b2 {
+  font-size: 15px; line-height: 1.35; color: var(--mg-tinta);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  padding-bottom: 0 !important; margin-bottom: 6px; max-height: 2.7em;
+}
+.block2-txt .cl3 { color: var(--mg-acento-oscuro); font-size: 17px; font-weight: 700; }
+.block2-txt-child2 a.btn-addwish-b2 {
+  display: inline-flex !important; align-items: center; justify-content: center;
+  width: 42px; height: 42px; padding: 0 !important; border-radius: 50%;
+  background: var(--mg-suave); color: var(--mg-tinta);
+  font-size: 19px; transition: background .2s, color .2s, transform .15s;
+}
+.block2-txt-child2 a.btn-addwish-b2:hover { background: var(--mg-acento); color: #fff; transform: scale(1.08); }
+
+/* Etiquetas sobre la foto */
+.mg-etiquetas { position: absolute; top: 10px; left: 10px; z-index: 2; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.mg-etiqueta { font-size: 12px; font-weight: 600; line-height: 1; padding: 6px 10px; border-radius: 999px; background: #fff; color: var(--mg-tinta); box-shadow: 0 2px 8px rgba(0, 0, 0, .15); }
+.mg-etiqueta--ultimas { background: #fff; color: #e8590c; }
+.mg-etiqueta--opciones { background: rgba(29, 32, 51, .86); color: #fff; }
+
+/* Cuadrícula de productos */
+.isotope-grid { margin-left: -9px; margin-right: -9px; }
+.isotope-grid > [class*="col-"] { padding-left: 9px; padding-right: 9px; }
+
+/* ---------- Franja de confianza ---------- */
+.mg-confianza { background: var(--mg-suave); padding: 34px 0; }
+.mg-confianza .mg-conf-item { display: flex; align-items: center; gap: 14px; padding: 8px 6px; }
+.mg-confianza .mg-conf-ico { flex: none; width: 48px; height: 48px; border-radius: 14px; background: #fff; box-shadow: var(--mg-sombra); display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--mg-acento-oscuro); }
+.mg-confianza b { display: block; color: var(--mg-tinta); font-size: 15px; }
+.mg-confianza span.mg-conf-txt { color: #7a7f93; font-size: 13.5px; line-height: 1.4; }
+
+/* ---------- Botón "Ver más" ---------- */
+.sec-producto-home .size-103 { border-radius: 999px; padding: 0 38px; }
+
+/* ===================== Celular ===================== */
+@media (max-width: 767px) {
+  .section-slide .item-slick1 { height: clamp(380px, 62vh, 520px); }
+  .section-slide .item-slick1::before { background: linear-gradient(180deg, rgba(18, 21, 48, 0) 38%, rgba(18, 21, 48, .66) 100%); }
+  .section-slide .respon5 { padding-top: 70px !important; padding-bottom: 28px !important; justify-content: flex-end; }
+  .section-slide .layer-slick1 .ltext-201 { padding-top: 10px !important; padding-bottom: 24px !important; }
+  .section-slide .layer-slick1 .ltext-101 { font-size: 16px; }
+
+  .mg-seccion-titulo { margin-bottom: 20px; }
+  .mg-seccion-titulo h3 { font-size: 22px; }
+  .sec-banner { padding-top: 40px !important; }
+  .sec-banner .block1 img { aspect-ratio: 1 / 1; }
+  .sec-banner .block1-txt { padding: 14px 16px !important; }
+  .sec-banner .block1-name { font-size: 16px; }
+  .sec-banner .block1-link { font-size: 12.5px; }
+  .sec-banner .row > div { padding-left: 8px; padding-right: 8px; }
+  .sec-banner .row { margin-left: -8px; margin-right: -8px; }
+}
+@media (max-width: 575px) {
+  /* 2 productos por fila en celular */
+  .isotope-grid > [class*="col-"] { flex: 0 0 50%; max-width: 50%; padding-left: 6px; padding-right: 6px; }
+  .isotope-grid { margin-left: -6px; margin-right: -6px; }
+  .block2 { border-radius: 12px; }
+  .block2-txt { padding: 10px 11px 12px !important; }
+  .block2-txt a.js-name-b2 { font-size: 13.5px; }
+  .block2-txt .cl3 { font-size: 15px; }
+  .block2-txt-child2 a.btn-addwish-b2 { width: 36px; height: 36px; font-size: 16px; }
+  .mg-etiqueta { font-size: 11px; padding: 5px 8px; }
+  /* 3 categorías: 2 por fila y la tercera a todo el ancho */
+  .sec-banner .row > div { flex: 0 0 50%; max-width: 50%; }
+  .sec-banner .row > div:last-child:nth-child(odd) { flex: 0 0 100%; max-width: 100%; }
+  .sec-banner .row > div:last-child:nth-child(odd) .block1 img { aspect-ratio: 16 / 9; }
+  .mg-confianza { padding: 22px 0; }
+  .mg-confianza .mg-conf-item { padding: 8px 4px; }
+}
+/* ===================== Toda la foto es tocable ===================== */
+/* Tarjetas: en pantallas táctiles el botón "Ver producto" se vuelve una capa invisible que cubre toda la foto */
+@media (hover: none), (max-width: 767px) {
+  .block2-pic .block2-btn {
+    display: block !important; position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+    width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important;
+    opacity: 0 !important; transform: none !important; border-radius: 0 !important;
+    font-size: 0 !important; z-index: 1;
+  }
+  .mg-etiquetas { pointer-events: none; z-index: 2; }
+}
+/* Ficha del producto: el enlace de zoom cubre toda la foto (antes era solo un botón pequeño en la esquina) */
+.item-slick3 .wrap-pic-w > a {
+  position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+  width: 100% !important; height: 100% !important; background: transparent !important;
+  display: flex !important; align-items: flex-start; justify-content: flex-end; padding: 12px;
+  cursor: zoom-in;
+}
+.item-slick3 .wrap-pic-w > a i {
+  width: 42px; height: 42px; border-radius: 50%; background: #fff; color: var(--mg-tinta);
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 12px rgba(0, 0, 0, .22);
+}
+.item-slick3 .wrap-pic-w img { -webkit-user-drag: none; user-select: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .block2, .sec-banner .block1, .sec-banner .block1 img, .block2-txt-child2 a.btn-addwish-b2 { transition: none; }
+}
