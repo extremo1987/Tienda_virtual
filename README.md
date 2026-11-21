@@ -10,7 +10,7 @@ Incluye un catálogo de ejemplo (5 productos por categoría con sus fotos) y ped
 
 ## Requisitos
 - PHP 8.3 o superior (probado en 8.3; compatible con 8.4) con las extensiones `pdo_mysql`, `mbstring`, `openssl`, `gd`, `fileinfo`
-- MySQL 5.7+ / MariaDB 10.4+
+- MySQL 5.7+ / MariaDB 10.4+ (probado en MariaDB 10.11)
 - Apache con `mod_rewrite` y `AllowOverride All` (en WAMP/XAMPP/cPanel ya viene así)
 
 ## Instalación (5 pasos)
