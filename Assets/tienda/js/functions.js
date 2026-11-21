@@ -84,7 +84,8 @@ $('.js-addcart-detail').each(function() {
                     cants.forEach(element => {
                         element.setAttribute("data-notify", objData.cantCarrito)
                     });
-                    swal(nameProduct, "¡Se agregó al carrito!", "success");
+                    const tmpNom = document.createElement("textarea"); tmpNom.innerHTML = nameProduct;
+                    swal(tmpNom.value, "¡Se agregó al carrito!", "success");
                 } else {
                     swal("", objData.msg , "error");
                 }
